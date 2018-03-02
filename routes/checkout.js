@@ -1,17 +1,19 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var braintree = require('braintree');
+var braintree = require("braintree");
 
-router.post('/', function (req, res, next) {
+require("dotenv").config();
+
+router.post("/", function (req, res, next) {
 
   /*		=Set up gateway
     ---------------------------------------- */
   
   var gateway = braintree.connect({
     environment: braintree.Environment.Sandbox,
-    merchantId: 'gqg8v5627nfqvf2y',
-    publicKey: 'xmzgjc9bqhqk267z',
-    privateKey: '6ca42a2a1d2d9f1ac98f984b4828a1c1'
+    merchantId: process.env.BRAINTREE_MERCHANT_ID,
+    publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+    privateKey: process.env.BRAINTREE_PRIVATE_KEY
   });
   
   /*		=Form data
