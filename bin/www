@@ -15,8 +15,8 @@ const fs = require("fs");
 
 // See: https://stackoverflow.com/questions/21397809/create-a-trusted-self-signed-ssl-cert-for-localhost-for-use-with-express-node
 const serverOptions = {
-  key: fs.readFileSync("../sslcert/nginx-selfsigned-2.key", "utf8"),
-  cert: fs.readFileSync("../sslcert/nginx-selfsigned-2.crt", "utf8"),
+  key: fs.readFileSync("./sslcert/nginx-selfsigned-2.key", "utf8"),
+  cert: fs.readFileSync("./sslcert/nginx-selfsigned-2.crt", "utf8"),
   requestCert: false,
   rejectUnauthorized: false
 };
