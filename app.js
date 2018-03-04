@@ -3,8 +3,6 @@ const express = require("express");
 
 const app = express();
 
-// app.use(require("helmet")());
-
 app.get("/", (req, res) => res.send("<h1>HS-BT</h1>"));
 
 app.use(function (req, res, next) {
@@ -16,7 +14,7 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-var checkout = require("./routes/checkout");
-app.use("/checkout", checkout);
+var checkout = require('./routes/checkout');
+app.use('/checkout', checkout);
 
 module.exports = app
