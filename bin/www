@@ -18,7 +18,8 @@ const serverOptions = {
   key: fs.readFileSync("./sslcert/nginx-selfsigned-2.key", "utf8"),
   cert: fs.readFileSync("./sslcert/nginx-selfsigned-2.crt", "utf8"),
   requestCert: false,
-  rejectUnauthorized: false
+  rejectUnauthorized: false,
+  agenr: false
 };
 // END: HTTPS
 
