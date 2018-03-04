@@ -3,6 +3,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(require("helmet")());
+
 app.get("/", (req, res) => res.send("<h1>HS-BT</h1>"));
 
 app.use(function (req, res, next) {
