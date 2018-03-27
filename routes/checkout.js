@@ -36,6 +36,7 @@ router.post("/", function (req, res, next) {
     billingPostalCode: form["billing-postal-code"],
 
     // Shipping
+    shippingPP: form["product-pp"],
     shippingStreetAddress: form["shipping-street-address"],
     shippingTown: form["shipping-town"],
     shippingRegion: form["shipping-region"],
@@ -82,6 +83,7 @@ router.post("/", function (req, res, next) {
       postalCode: clientData.shippingPostalCode,
       countryName: clientData.shippingCountry
     },
+    shippingAmount: clientData.shippingPP,
 
     // Product
     lineItems:[
